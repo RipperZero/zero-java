@@ -1,6 +1,11 @@
 #server
 server:
   port: 8082
+  #  ssl:
+  #    enabled: true
+  #    key-store: classpath:zeroKeystore.pfx
+  #    key-store-password: 123456
+  #    key-store-type: PKCS12
   tomcat:
     threads:
       max: 1000

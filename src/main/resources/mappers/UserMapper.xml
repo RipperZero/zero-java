@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zero.mapper.UserMapper">
-    <select id="findAll" resultType="com.zero.pojo.User">
-        select * from pf_users;
+    <select id="findAllUsers" resultType="com.zero.pojo.User">
+        select *
+        from pf_users;
     </select>
 
+    <select id="countUser" resultType="int">
+        select count(*)
+        from pf_users;
+    </select>
+
+    <select id="findUsersByPager" resultType="com.zero.pojo.User">
+        select *
+        from pf_users
+        limit #{offset},#{pageSize};
+    </select>
+
+    <select id="findUserByName" resultType="com.zero.pojo.User">
+        select *
+        from pf_users
+        where username = #{username};
+    </select>
 </mapper>
