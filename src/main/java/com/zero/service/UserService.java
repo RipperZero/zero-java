@@ -11,4 +11,6 @@ public interface UserService {
     Pager<User> findUsersByPager(int pageNum, int pageSize);
 
     Boolean isUserExist(String username);
+
+    Integer saveUser(User user);
 }

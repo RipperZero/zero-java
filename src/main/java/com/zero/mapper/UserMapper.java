@@ -15,4 +15,6 @@ public interface UserMapper {
     List<User> findUsersByPager(@Param("offset") int offset, @Param("pageSize") int pageSize);
 
     User findUserByName(String username);
+
+    int saveUser(User user);
 }

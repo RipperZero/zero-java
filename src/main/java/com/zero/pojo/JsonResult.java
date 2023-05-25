@@ -12,12 +12,12 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class JsonResult implements Serializable {
-    private boolean success;
-    private int code;
+    private Boolean success;
+    private Integer code;
     private String message;
     private Object data;
 
-    public static JsonResult success(Object data) {
+    public static JsonResult SUCCESS(Object data) {
         JsonResult jsonResult = new JsonResult();
 
         jsonResult.setSuccess(true);
@@ -25,4 +25,9 @@ public class JsonResult implements Serializable {
 
         return jsonResult;
     }
+
+    public static JsonResult SUCCESS(String message, Object data) {
+        return SUCCESS(data).setMessage(message);
+    }
+
 }

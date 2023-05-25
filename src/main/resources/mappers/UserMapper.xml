@@ -22,4 +22,12 @@
         from pf_users
         where username = #{username};
     </select>
+
+    <insert id="saveUser" parameterType="com.zero.pojo.User" useGeneratedKeys="true" keyProperty="id">
+        insert into pf_users
+        (idcard, username, password, salt, email, mobile, valid, created_time, modified_time, created_user,
+         modified_user)
+        values (#{idcard}, #{username}, #{password}, #{salt}, #{email}, #{mobile}, #{valid}, #{createdTime},
+                #{modifiedTime}, #{createdUser}, #{modifiedUser});
+    </insert>
 </mapper>
